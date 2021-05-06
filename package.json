@@ -2,9 +2,10 @@
   "name": "pure_nodejs_2021",
   "version": "1.0.0",
   "description": "\"Pure Node.JS small project for learning\"",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "keywords": [
     "node.js"
@@ -12,6 +13,9 @@
   "author": "Badri Paudel",
   "license": "ISC",
   "dependencies": {
-    "@glidejs/glide": "^3.4.1"
+    "@glidejs/glide": "^3.4.1",
+    "axios": "^0.21.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
   }
 }
