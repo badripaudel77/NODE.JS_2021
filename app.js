@@ -70,6 +70,14 @@ app.get('/users/:id', (req,res) => {
   .catch(e => console.log("eror fetching single user" + e))
 })
 
+//delete user
+app.delete('/users/:id', (req, res) => {
+    const id = req.params.id
+    User.findByIdAndDelete(id)
+    .then(result => res.json({redirect : '/', }))
+    .catch(err => console.log("couldn't deleted"))
+})
+
 app.use((req, res) => {
     res.sendFile('./views/pagenotfound.html', { root : __dirname})
 })

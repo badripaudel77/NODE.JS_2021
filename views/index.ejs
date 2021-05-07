@@ -40,11 +40,25 @@
                 <tr>
                     <td><%= user.fullname %></td>
                     <td><%= user.address %></td>
-                    <td><a href="#">Edit</a> || <a href="#"> Delete</a></td>
+                    <td><a class="delete" data-id="<%= user._id %>">Delete</a></td>
                   </tr>
             </div>
          <%}) %>
      %>   
      </table>
+
+     <script>
+         const deleteLink = document.querySelector('a.delete')
+         const endPoint = `/users/${deleteLink.dataset.id}`
+
+         deleteLink.addEventListener('click', (event) => { 
+             fetch(endPoint, {
+                 method : 'DELETE'
+             })
+             .then((res) => res.json())
+             .then(data => window.location.href = data.redirect)
+             .catch(err => console.log("error occured " + err))
+         })
+     </script>
 </body>
 </html>
