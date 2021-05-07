@@ -56,6 +56,20 @@ app.post('/addUser', (req, res) => {
     })
     .catch(err => console.log(err))
 })
+
+app.get('/users', (req,res) => {
+    res.redirect('/')
+})
+
+//get one user 
+app.get('/users/:id', (req,res) => {
+  const id = req.params.id
+  console.log(id );
+  const user = User.findById(id)
+  .then(result => console.log("single user is " + result.fullname + " lives in " + result.address))
+  .catch(e => console.log("eror fetching single user" + e))
+})
+
 app.use((req, res) => {
     res.sendFile('./views/pagenotfound.html', { root : __dirname})
 })
