@@ -2,14 +2,49 @@
 <head>
     <title><%= indexTitle %></title>
     <link rel="stylesheet" href="/styles.css">
+
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+
 </head>
 <html>
 
 <body>
       <!-- include header here -->
       <%- include('./partials/header.ejs') %>
-    
-     <h2>Welcome to Node.JS 2021 Lockdown Application : Nepal</h2>
+      <h3>Total Users -</h3>
+      <table>
+        <tr>
+            <th>Fullname</th>
+            <th>Address</th>
+            <th>Action</th>
+        </tr>
+     <%
+         users.forEach(user => { %>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <tr>
+                    <td><%= user.fullname %></td>
+                    <td><%= user.address %></td>
+                    <td><a href="#">Edit</a> || <a href="#"> Delete</a></td>
+                  </tr>
+            </div>
+         <%}) %>
+     %>   
+     </table>
 </body>
-
 </html>

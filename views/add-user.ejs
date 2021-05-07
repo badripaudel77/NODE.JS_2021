@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <title><%= addUserTitle %></title>
+</head>
+<html>
+
+<body>
+      <!-- include header here -->
+      <%- include('./partials/header.ejs') %>
+      <h2>Add User</h2>
+      <form action="/addUser" method="POST">
+        <label for="fullname">Fullname:</label><br>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter Fullname"><br>
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address" placeholder="Enter Addres">
+        <input type="submit" value="Add User" />
+      </form>
+</body>
+
+</html>

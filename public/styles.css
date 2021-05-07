@@ -1,11 +1,14 @@
-     .header {
+ *{
+     margin: 0;
+     padding: 0;
+ }
+.header {
           display: flex;
-          flex-direction: row;
           justify-content: space-around;
           background: gray;
           padding: 20px;
      }
-     a {
+     .header a {
           text-decoration: none;
           color: wheat;
      }
